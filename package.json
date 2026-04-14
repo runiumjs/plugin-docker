@@ -1,0 +1,38 @@
+{
+  "name": "@runium/plugin-docker",
+  "version": "2026.2.1",
+  "description": "Runium plugin for Docker support",
+  "author": "TheBeastApp",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf ./lib && node build.js",
+    "build:tsc": "rimraf ./lib && tsc",
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "eslint ./src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [
+    "runium",
+    "runium-plugin",
+    "docker"
+  ],
+  "devDependencies": {
+    "@runium/types-plugin": "2026.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "esbuild": "^0.25.11",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "rimraf": "^6.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "yaml": "^2.8.2"
+  }
+}
