@@ -42,6 +42,12 @@ export function getDockerComposeTaskProjectSchema(): ProjectSchemaExtensionTask 
                 environment: {
                   $ref: '#/$defs/Runium_Env',
                 },
+                envFile: {
+                  type: 'array',
+                  items: {
+                    type: 'string',
+                  },
+                },
                 networks: {
                   type: 'array',
                   items: {

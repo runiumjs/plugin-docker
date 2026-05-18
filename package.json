@@ -1,6 +1,6 @@
 {
   "name": "@runium/plugin-docker",
-  "version": "2026.2.1",
+  "version": "2026.3.0",
   "description": "Runium plugin for Docker support",
   "author": "TheBeastApp",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "docker"
   ],
   "devDependencies": {
-    "@runium/types-plugin": "2026.2.0",
+    "@runium/types-plugin": "2026.3.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "esbuild": "^0.25.11",
@@ -33,6 +33,6 @@
     "vite": "^7.1.12"
   },
   "dependencies": {
-    "yaml": "^2.8.2"
+    "yaml": "^2.9.0"
   }
 }
