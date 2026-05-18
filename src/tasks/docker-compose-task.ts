@@ -1,4 +1,5 @@
 import { spawn, SpawnOptionsWithoutStdio } from 'node:child_process';
+import { resolve } from 'node:path';
 import { stringify } from 'yaml';
 import {
   DockerTaskBase,
@@ -21,6 +22,7 @@ export interface DockerComposeService {
   ports?: string[];
   volumes?: string[];
   environment?: { [key: string]: string | number | boolean };
+  envFile?: string[];
   networks?: string[];
   dependsOn?: string[];
   restart?: 'no' | 'always' | 'on-failure' | 'unless-stopped';
@@ -149,6 +151,13 @@ export class DockerComposeTask extends DockerTaskBase<
         } else {
           serviceConfig[targetKey] = value;
         }
+      }
+
+      // env files if specified
+      if (service.envFile && service.envFile.length > 0) {
+        serviceConfig.env_file = service.envFile.map(envFilePath =>
+          resolve(envFilePath)
+        );
       }
 
       compose.services[serviceName] = serviceConfig;
